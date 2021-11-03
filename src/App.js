@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles.css";
-var color = "blue";
+var color = "gray";
 
 const emoDatabase = {
   "😀": "Grinning Face",
@@ -124,7 +124,10 @@ export default function App() {
   return (
     <div className="App">
       <h1 style={{ color: color }}> Emoji Finder</h1>
-      <input placeholder="type here..." onChange={inputType}></input>
+      <input
+        placeholder="type or select from below..."
+        onChange={inputType}
+      ></input>
       <div>
         <br />
         {meaning}
@@ -133,22 +136,24 @@ export default function App() {
         <br />
         <hr />
         <h3>Our emoji database</h3>
-        {emoArr.map(function (emoji) {
-          return (
-            <span
-              onClick={() => onclickHandler(emoji)}
-              style={{
-                listStyleType: "none",
-                padding: "0.6rem",
-                fontSize: "1.5rem",
-                cursor: "pointer"
-              }}
-              key={emoji}
-            >
-              {emoji}
-            </span>
-          );
-        })}
+        <div className="div">
+          {emoArr.map(function (emoji) {
+            return (
+              <span
+                onClick={() => onclickHandler(emoji)}
+                style={{
+                  listStyleType: "none",
+                  padding: "0.6rem",
+                  fontSize: "1.5rem",
+                  cursor: "pointer"
+                }}
+                key={emoji}
+              >
+                {emoji}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

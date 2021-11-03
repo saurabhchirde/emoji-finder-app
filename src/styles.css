@@ -4,7 +4,14 @@
 }
 
 input {
-  width: 70%;
+  width: 75%;
   height: 6vh;
   font-size: 1.2rem;
+}
+hr {
+  width: 75%;
+}
+.div {
+  margin: auto;
+  width: 80%;
 }
